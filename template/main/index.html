@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'components/navbar.html' %}
+
+<div class = "container">
+    <div class = "row">
+        <h2>Questions</h2>
+    </div>
+
+    <div class = "row">
+        <div class = "col-6">
+            <div class="collection">
+            {% for questions in questions_list %}  
+                <a href="{% url 'question' questions.slug %}" class="collection-item">{{questions.content}}</a>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
